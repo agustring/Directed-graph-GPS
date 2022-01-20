@@ -1,4 +1,4 @@
-﻿#include "mainwindow.h"
+#include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <gmap.h>
 #include <QList>
@@ -159,13 +159,15 @@ void generartexto(QGraphicsTextItem *text1, int x, int y, int inclinacion, QStri
     text1->setPlainText(texto);
 }
 
-void drawMap(QGraphicsScene &scene){
+#ATENTION THE CODE BELOW THIS COMMENTARY IS NOT WRITTEN BY AGUSTIN COPITA!
 
+void drawMap(QGraphicsScene &scene){
+        #---------------------------------------------Conceptual error here, should not be static---------------------------------------------------------------
         QList <QString> lista_de_calles_verticales = {"calle a -->", "calle b <--", "calle c -->","calle d <--","calle e -->","calle f <--", "calle g -->"};
         QList <QString> lista_de_calles_horizontales = {"calle 1 -->", "calle 2 <--", "calle 3 -->", "calle 4 <--", "calle 5 -->", "calle 6 <--", "calle 7 -->"};
         QList <QString> lista_de_calles_diagonales1 = { "diagonal 2 -->", "diagonal 3 -->", "diagonal 4 <--","diagonal 5 -->"};
         QList <QString> lista_de_calles_diagonales2 = {"diagonal 6 <-- ", "diagonal 7 <--", "diagonal 9 -->", "diagonal 10 <--", "diagonal 11 -->", "diagonal 12 -->"};
-
+        
 
         QGraphicsTextItem *text = new QGraphicsTextItem;
         generartexto(text,45,27,45,"diagonal 1 -->");
@@ -173,7 +175,8 @@ void drawMap(QGraphicsScene &scene){
         QGraphicsTextItem *text5 = new QGraphicsTextItem;
         generartexto(text5,397,140,45,"diagonal 8 -->");
         scene.addItem(text5);
-
+        #----------------------------------------------------------------------------------------------------------------------------------------------------------
+    
         for (int k = 0; k<7; k++){
 
 
